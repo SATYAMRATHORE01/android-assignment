@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to Logcat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+nI1T/ZdlGfslMhtL3iVCq0n0n8ik2f3Ka/n6U " crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #343a40;
+    }
+
+    h1,
+    h3 {
+      color: #007bff;
+    }
+
+    .important-point {
+      font-weight: bold;
+    }
+
+    .code-snippet {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container bg-white p-4 rounded shadow-sm">
+    <h1 class="mt-5 mb-4">Introduction to Logcat</h1>
+    <p>
+      <span class="important-point">Logcat</span> is a debugging tool in Android development used to view system and
+      application logs. It provides developers with a way to monitor messages from various sources, including system
+      messages, application messages, and messages from other devices connected to the Android Debug Bridge (ADB).
+    </p>
+
+    <h3>Key Features of Logcat:</h3>
+    <ul>
+      <li><span class="important-point">Logging Levels:</span> Logcat supports different logging levels, including
+        verbose, debug, info, warning, error, and assert. Developers can filter messages based on these levels to focus
+        on specific types of logs.</li>
+      <li><span class="important-point">Tagging:</span> Developers can add custom tags to their log messages, making it
+        easier to identify messages from specific components or modules of their application.</li>
+      <li><span class="important-point">Filtering:</span> Logcat allows developers to filter messages based on tags,
+        logging levels, and other criteria. This helps in isolating relevant messages and reducing noise in the log
+        output.</li>
+      <li><span class="important-point">Real-Time Monitoring:</span> Developers can view log messages in real-time as
+        their application runs on a device or emulator. This enables them to monitor the behavior of their application
+        and diagnose issues as they occur.</li>
+    </ul>
+
+    <h3>Usage Example:</h3>
+    <div class="code-snippet">
+      <pre>
+<code>
+// Example usage of Logcat in Android development
+Log.d("MainActivity", "onCreate: Activity created");
+Log.e("MainActivity", "onError: Something went wrong");
+</code>
+      </pre>
+    </div>
+
+    <p>
+      In the above code snippet, <code>Log.d()</code> is used to log a debug message with the tag "MainActivity", and
+      <code>Log.e()</code> is used to log an error message with the same tag.
+    </p>
+  </div>
+</body>
+
+</html>

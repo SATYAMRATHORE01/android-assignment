@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Cycle of Activity</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+nI1T/ZdlGfslMhtL3iVCq0n0n8ik2f3Ka/n6U " crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #343a40;
+    }
+
+    h1,
+    h3 {
+      color: #007bff;
+    }
+
+    .important-point {
+      font-weight: bold;
+    }
+
+    .code-snippet {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .diagram-img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container bg-white p-4 rounded shadow-sm">
+    <h1 class="mt-5 mb-4">Life Cycle of Activity</h1>
+    <p>
+      An Android activity goes through several stages during its lifetime, known as the Activity life cycle. Each
+      stage offers different methods for developers to manage the state and behavior of their activities.
+    </p>
+
+    <h3>Seven Steps in Activity Life Cycle:</h3>
+    <ol>
+      <li><span class="important-point">onCreate():</span> The system calls this method when creating the activity. It
+        is the first callback received by an activity, and it is here that initialization is done, such as inflating the
+        layout and initializing variables.</li>
+      <li><span class="important-point">onStart():</span> Called when the activity is becoming visible to the user. At
+        this point, the activity is not yet visible.</li>
+      <li><span class="important-point">onResume():</span> Called when the activity will start interacting with the
+        user. At this point, the activity is at the top of the activity stack and is visible and interacting with the
+        user.</li>
+      <li><span class="important-point">onPause():</span> Called when the activity is going into the background but has
+        not been killed. It is a good place to commit unsaved changes or pause ongoing processes that should not
+        continue while the user is not interacting with the app.</li>
+      <li><span class="important-point">onStop():</span> Called when the activity is no longer visible to the user. This
+        may happen because the activity is being destroyed, a new activity is starting, or the user is navigating
+        away.</li>
+      <li><span class="important-point">onDestroy():</span> The final call received before the activity is destroyed.
+        This can happen either because the activity is finishing or because the system is temporarily destroying it to
+        conserve resources.</li>
+    </ol>
+
+    <h3>Activity Life Cycle Diagram:</h3>
+    <img src="https://developer.android.com/guide/components/images/activity_lifecycle.png" alt="Activity Life Cycle Diagram" class="diagram-img">
+    <p>For a visual representation of the Activity life cycle, please refer to the above diagram.</p>
+  </div>
+</body>
+
+</html>

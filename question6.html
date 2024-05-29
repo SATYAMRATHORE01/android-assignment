@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broadcast Receiver and Content Provider</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+nI1T/ZdlGfslMhtL3iVCq0n0n8ik2f3Ka/n6U " crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #343a40;
+    }
+
+    h1,
+    h3 {
+      color: #007bff;
+    }
+
+    .important-point {
+      font-weight: bold;
+    }
+
+    .code-snippet {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .diagram-img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container bg-white p-4 rounded shadow-sm">
+    <h1 class="mt-5 mb-4">Broadcast Receiver and Content Provider</h1>
+    <p>
+      <span class="important-point">Broadcast Receiver</span> and <span class="important-point">Content Provider</span>
+      are two important components of Android applications that enable communication between different parts of the
+      system and access to shared data, respectively.
+    </p>
+
+    <h3>Broadcast Receiver:</h3>
+    <p>
+      A <span class="important-point">Broadcast Receiver</span> is an Android component that responds to system-wide
+      broadcast announcements. It is used to listen for and react to broadcast messages from other applications or from
+      the system itself.
+    </p>
+    <p>Example: A messaging app may use a Broadcast Receiver to receive and handle incoming SMS messages.</p>
+
+    <h3>Content Provider:</h3>
+    <p>
+      A <span class="important-point">Content Provider</span> is a component that manages access to a structured set of
+      data. It acts as an intermediary between the application and data sources such as files, databases, or network
+      servers.
+    </p>
+    <p>Example: Android's built-in Contacts app provides a Content Provider that allows other apps to access and
+      manipulate contact information stored on the device.</p>
+
+    <h3> Diagram:</h3>
+    <img src="https://tse1.mm.bing.net/th?id=OIP.wYZV7EgRfS6J3xkL6AMkigHaDH&pid=Api&P=0&h=180" alt="Broadcast Receiver and Content Provider Diagram"
+      class="diagram-img">
+    <p>For a visual representation of Broadcast Receiver and Content Provider, please refer to the above diagram.</p>
+
+    <h3>Example Code:</h3>
+    <div class="code-snippet">
+      <p><span class="important-point">Broadcast Receiver Example:</span></p>
+      <pre>
+<code>
+public class MyBroadcastReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        // Handle broadcast message here
+    }
+}
+</code>
+      </pre>
+
+      <p><span class="important-point">Content Provider Example:</span></p>
+      <pre>
+<code>
+public class MyContentProvider extends ContentProvider {
+    @Override
+    public boolean onCreate() {
+        // Initialize content provider here
+        return true;
+    }
+
+    @Override
+    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        // Perform query operation here
+        return null;
+    }
+
+    // Other Content Provider methods
+}
+</code>
+      </pre>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Handling in Android</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+nI1T/ZdlGfslMhtL3iVCq0n0n8ik2f3Ka/n6U " crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #343a40;
+    }
+
+    h1,
+    h3 {
+      color: #007bff;
+    }
+
+    .important-point {
+      font-weight: bold;
+    }
+
+    .code-snippet {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container bg-white p-4 rounded shadow-sm">
+    <h1 class="mt-5 mb-4">Event Handling in Android</h1>
+
+    <p>
+      In Android, event handling involves responding to user interactions such as button clicks, touch gestures, and
+      keyboard input. This is achieved by implementing event listeners and handling events in your application code.
+    </p>
+
+    <h3>Example: Handling Button Click Event</h3>
+    <p>
+      Let's consider an example where we have a button in our layout, and we want to display a toast message when the
+      button is clicked.
+    </p>
+
+    <div class="code-snippet">
+      <p><span class="important-point">Layout XML (activity_main.xml):</span></p>
+      <pre>
+<code>
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"&gt;
+
+    &lt;Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me"
+        android:layout_centerInParent="true" /&gt;
+
+&lt;/RelativeLayout&gt;
+</code>
+      </pre>
+
+      <p><span class="important-point">Java Code (MainActivity.java):</span></p>
+      <pre>
+<code>
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle button click event
+                Toast.makeText(MainActivity.this, "Button clicked!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}
+</code>
+      </pre>
+    </div>
+
+    <p>
+      In this example, we define a button in the layout XML file (activity_main.xml) and handle its click event in the
+      corresponding Java code (MainActivity.java) using an OnClickListener.
+    </p>
+  </div>
+</body>
+
+</html>
